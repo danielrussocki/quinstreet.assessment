@@ -1,13 +1,96 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite + TS</title>
+</head>
+
+<body
+  class="relative z-1 before:-z-1 before:absolute before:w-full before:h-full before:min-h-screen before:top-0 before:left-0 before:content-(--content-empty) before:bg-(image:--bg-app-body) before:bg-repeat before:opacity-24">
+  <nav class="w-full sticky top-0 left-0 flex justify-center items-center py-5.5 bg-app-gray z-9999">
+    <img src="/image/logo.svg" alt="">
+  </nav>
+  <main
+    class="pt-8 pb-20 px-4 relative z-1 before:-z-1 before:absolute before:w-full before:h-[25vw] before:top-0 before:left-0 before:content-(--content-empty) before:bg-(image:--bg-app-body-gradient)">
+    <section class="w-full max-w-167.5 mx-auto shadow-app-card">
+      <!-- card header -->
+      <div class="text-center px-5 bg-app-gray py-4 text-white text-[18px] font-semibold">
+        <p>Enter to win a 3rd generation Nest</p>
+        <br>
+        <p>Learning Thermostat worth $249.</p>
+      </div>
+      <!-- card content -->
+      <div class="bg-white py-7.5 px-6 md:px-13.5">
+        <form id="app-form" class="w-full flex flex-col gap-5">
+          <div class="w-full">
+            <input type="text" placeholder="Name" name="name"
+              class="font-light text-app-gray border border-app-gray-light w-full shadow-app-input py-2.5 px-6 rounded-sm">
+          </div>
+          <div class="w-full flex gap-2.5 md:gap-6.5">
+            <input type="text" placeholder="City" name="city"
+              class="font-light text-app-gray border border-app-gray-light w-3/5 md:w-2/3 shadow-app-input py-2.5 px-6 rounded-sm">
+            <input type="text" placeholder="State" name="state"
+              class="font-light text-app-gray border border-app-gray-light w-2/5 md:w-1/3 shadow-app-input py-2.5 px-6 rounded-sm">
+          </div>
+          <div class="w-full">
+            <input type="text" placeholder="Phone Number" name="phone"
+              class="font-light text-app-gray border border-app-gray-light w-full shadow-app-input py-2.5 px-6 rounded-sm">
+          </div>
+          <div class="w-full">
+            <input type="text" placeholder="Email Address" name="email"
+              class="font-light text-app-gray border border-app-gray-light w-full shadow-app-input py-2.5 px-6 rounded-sm">
+          </div>
+          <div class="w-full text-center">
+            <button id="app-button" data-text="Enter to win"
+              class="inline-block relative uppercase w-full md:w-auto text-white py-3.5 bg-app-orange rounded-full px-10 md:px-15.5 transition-colors cursor-pointer hover:bg-app-orange-dark"
+              type="submit">
+              <span class="inline-block app-button-text">Enter to win</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                class="app-button-loader absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                style="opacity: 0; pointer-events: none;">
+                <circle cx="4" cy="12" r="3" fill="currentColor">
+                  <animate id="svgSpinners3DotsFade0" fill="freeze" attributeName="opacity"
+                    begin="0;svgSpinners3DotsFade1.end-0.25s" dur="0.75s" values="1;0.2" />
+                </circle>
+                <circle cx="12" cy="12" r="3" fill="currentColor" opacity="0.4">
+                  <animate fill="freeze" attributeName="opacity" begin="svgSpinners3DotsFade0.begin+0.15s" dur="0.75s"
+                    values="1;0.2" />
+                </circle>
+                <circle cx="20" cy="12" r="3" fill="currentColor" opacity="0.3">
+                  <animate id="svgSpinners3DotsFade1" fill="freeze" attributeName="opacity"
+                    begin="svgSpinners3DotsFade0.begin+0.3s" dur="0.75s" values="1;0.2" />
+                </circle>
+              </svg>
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <section class="mt-8 relative w-full max-w-100 mx-auto border-x-2 border-b-2 border-app-green px-5 py-4">
+      <span class="absolute top-0 left-0 border border-app-green w-1/6"></span>
+      <h4
+        class="uppercase text-center text-nowrap font-semibold text-[15px] text-app-gray absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        Even more
+        savings</h4>
+      <span class="absolute top-0 right-0 border border-app-green w-1/6"></span>
+      <div class="w-full bg-white/75 px-5 pt-3 pb-11.5">
+        <h3 class="uppercase text-app-green font-semibold text-[12px]">Advertorial</h3>
+        <h2 class="mt-0.5 text-[20px] font-light text-app-gray">Tricks Homeowners Use to Eliminate Bills</h2>
+        <p class="mt-3 text-[14px] text-app-gray font-light leading-none">Surging energy bills, unpredictable weather
+          patterns and
+          dissatisfaction with utility companies have
+          homeowners scrambling... <br class="hidden md:block"><button
+            class="inline-block uppercase text-app-blue font-semibold text-[14px] cursor-pointer">
+            Read more
+          </button>
+        </p>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
 </html>

@@ -1,24 +1,57 @@
-import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
+/* fonts */
+import "@fontsource/montserrat/300.css";
+import "@fontsource/montserrat/400.css";
+import "@fontsource/montserrat/600.css";
+/* components */
+import { Button } from "./components/button";
+/* styles */
+import "./style.css";
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
+const endpointUri =
+  "https://url.us.m.mimecastprotect.com/s/L5k1CmZ258C1ELGqcOhJTRnXp3?domain=formsws-hilstaging-com-0adj9wt8gzyq.runscope.net";
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+document.addEventListener("DOMContentLoaded", () => {
+  const button = new Button("#app-button");
+
+  async function submitForm(el: HTMLFormElement) {
+    const formData = new FormData(el);
+
+    /* ajax version */
+    // const formJsonData: Record<string, string> = {};
+    // formData.forEach((item, key) => {
+    //   if (item instanceof File) return;
+    //   formJsonData[key] = item;
+    // });
+    // const encodedData = new URLSearchParams(formJsonData).toString();
+
+    // const xhttp = new XMLHttpRequest();
+    // xhttp.open("POST", endpointUri);
+    // xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    // xhttp.send(encodedData);
+
+    /* fetch version */
+    try {
+      button.setLoading(true);
+
+      const response = await fetch(endpointUri, {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!response.ok) throw new Error("something went wrong!");
+      const data = await response.json();
+      console.log(data);
+    } catch (e) {
+      console.error(e);
+    } finally {
+      button.setLoading(false);
+    }
+  }
+
+  const formElement = document.getElementById("app-form") as HTMLFormElement;
+
+  formElement.addEventListener("submit", (e) => {
+    e.preventDefault();
+    submitForm(formElement);
+  });
+});
