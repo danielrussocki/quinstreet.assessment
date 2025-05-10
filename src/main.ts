@@ -7,6 +7,13 @@ import { Button } from "./components/button";
 /* styles */
 import "./style.css";
 
+// TODO: Mask del Input de Phone Numer
+// TODO: Funcionalidad del Read More...
+// TODO: Regex para validar input Email
+// TODO: Validaciones de Inputs en general
+// TODO: Fondo cambiante según email
+// TODO: Agregar un state disabled al botón cuando se encuentre en loading para evitar múltiples clicks
+
 const endpointUri =
   "https://url.us.m.mimecastprotect.com/s/L5k1CmZ258C1ELGqcOhJTRnXp3?domain=formsws-hilstaging-com-0adj9wt8gzyq.runscope.net";
 
