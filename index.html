@@ -45,13 +45,15 @@
           </div>
           <div class="w-full text-center">
             <!-- submit button -->
-            <button id="app-button" data-text="Enter to win"
-              class="inline-block relative uppercase w-full md:w-auto text-white py-3.5 bg-app-orange rounded-full px-10 md:px-15.5 transition-colors cursor-pointer not-disabled:hover:bg-app-orange-dark disabled:cursor-not-allowed"
+            <button id="app-button"
+              class="group/app-submit inline-block relative uppercase w-full md:w-auto text-white py-3.5 bg-app-orange rounded-full px-10 md:px-15.5 transition-colors cursor-pointer not-disabled:hover:bg-app-orange-dark disabled:cursor-not-allowed"
               type="submit">
-              <span class="inline-block app-button-text">Enter to win</span>
+              <span
+                class="inline-block app-button-text transition-opacity duration-240 group-disabled/app-submit:opacity-0">Enter
+                to
+                win</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                class="app-button-loader absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                style="opacity: 0; pointer-events: none;">
+                class="app-button-loader absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-240 group-disabled/app-submit:opacity-100">
                 <circle cx="4" cy="12" r="3" fill="currentColor">
                   <animate id="svgSpinners3DotsFade0" fill="freeze" attributeName="opacity"
                     begin="0;svgSpinners3DotsFade1.end-0.25s" dur="0.75s" values="1;0.2" />

@@ -37,7 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* fetch version */
     try {
-      button.setLoading(true);
       button.setDisabled(true);
 
       const response = await fetch(endpointUri, {
@@ -55,8 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
     } catch (e) {
       button.setDisabled(false);
       console.error(e);
-    } finally {
-      button.setLoading(false);
     }
   }
 
