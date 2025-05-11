@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vite + TS</title>
+  <title>QuinStreet Assessment</title>
 </head>
 
 <body
@@ -37,15 +37,16 @@
           </div>
           <div class="w-full">
             <input type="text" placeholder="Phone Number" name="phone"
-              class="font-light text-app-gray border border-app-gray-light w-full shadow-app-input py-2.5 px-6 rounded-sm">
+              class="font-light text-app-gray border border-app-gray-light w-full shadow-app-input py-2.5 px-6 rounded-sm app-mask-input">
           </div>
           <div class="w-full">
             <input type="text" placeholder="Email Address" name="email"
               class="font-light text-app-gray border border-app-gray-light w-full shadow-app-input py-2.5 px-6 rounded-sm">
           </div>
           <div class="w-full text-center">
+            <!-- submit button -->
             <button id="app-button" data-text="Enter to win"
-              class="inline-block relative uppercase w-full md:w-auto text-white py-3.5 bg-app-orange rounded-full px-10 md:px-15.5 transition-colors cursor-pointer hover:bg-app-orange-dark"
+              class="inline-block relative uppercase w-full md:w-auto text-white py-3.5 bg-app-orange rounded-full px-10 md:px-15.5 transition-colors cursor-pointer not-disabled:hover:bg-app-orange-dark disabled:cursor-not-allowed"
               type="submit">
               <span class="inline-block app-button-text">Enter to win</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -82,10 +83,10 @@
         <p class="mt-3 text-[14px] text-app-gray font-light leading-none">Surging energy bills, unpredictable weather
           patterns and
           dissatisfaction with utility companies have
-          homeowners scrambling... <br class="hidden md:block"><button
+          homeowners scrambling... <a href="https://www.google.com" target="_blank"
             class="inline-block uppercase text-app-blue font-semibold text-[14px] cursor-pointer">
             Read more
-          </button>
+          </a>
         </p>
       </div>
     </section>

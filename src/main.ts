@@ -4,20 +4,19 @@ import "@fontsource/montserrat/400.css";
 import "@fontsource/montserrat/600.css";
 /* components */
 import { Button } from "./components/button";
+import { MaskInput } from "./components/maskInput";
 /* styles */
 import "./style.css";
 
-// TODO: Mask del Input de Phone Numer
-// TODO: Funcionalidad del Read More...
 // TODO: Regex para validar input Email
 // TODO: Validaciones de Inputs en general
 // TODO: Fondo cambiante según email
-// TODO: Agregar un state disabled al botón cuando se encuentre en loading para evitar múltiples clicks
 
 const endpointUri =
-  "https://url.us.m.mimecastprotect.com/s/L5k1CmZ258C1ELGqcOhJTRnXp3?domain=formsws-hilstaging-com-0adj9wt8gzyq.runscope.net";
+  "https://formsws-hilstaging-com-0adj9wt8gzyq.runscope.net/solar";
 
 document.addEventListener("DOMContentLoaded", () => {
+  new MaskInput(".app-mask-input");
   const button = new Button("#app-button");
 
   async function submitForm(el: HTMLFormElement) {
@@ -39,16 +38,22 @@ document.addEventListener("DOMContentLoaded", () => {
     /* fetch version */
     try {
       button.setLoading(true);
+      button.setDisabled(true);
 
       const response = await fetch(endpointUri, {
         method: "POST",
+        headers: {
+          "Content-type": "application/x-www-form-urlencoded",
+        },
         body: formData,
       });
 
       if (!response.ok) throw new Error("something went wrong!");
       const data = await response.json();
+      button.setText("Submitted");
       console.log(data);
     } catch (e) {
+      button.setDisabled(false);
       console.error(e);
     } finally {
       button.setLoading(false);

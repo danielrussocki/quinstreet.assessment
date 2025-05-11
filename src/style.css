@@ -14,7 +14,7 @@
   --shadow-app-card: 0px 7px 14px 0px #6eb7c25e;
   --shadow-app-input: inset 0px 1px 2px 0px #00000080;
   /* background image */
-  --bg-app-body: url("/image/background.png");
+  --bg-app-body: url("/image/background.webp");
   --bg-app-body-gradient: linear-gradient(
     0,
     #ffffff00 0% 0%,
@@ -22,4 +22,15 @@
   );
   /* content */
   --content-empty: "";
+  /* animations */
+  ---animate-background: app-background-color 5s ease-in-out alternate infinite;
+  /* keyframes */
+  @keyframes app-background-color {
+    from {
+      background-color: #ecf8fb;
+    }
+    to {
+      background-color: #efefef;
+    }
+  }
 }

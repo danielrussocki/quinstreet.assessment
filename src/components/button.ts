@@ -56,4 +56,12 @@ export class Button {
     this.loading = value;
     this.handleContent();
   }
+
+  setDisabled(value: boolean) {
+    this.element.disabled = value;
+  }
+
+  setText(value: string) {
+    this.textElement.textContent = value;
+  }
 }
