@@ -8,10 +8,6 @@ import { MaskInput } from "./components/maskInput";
 /* styles */
 import "./style.css";
 
-// TODO: Regex para validar input Email
-// TODO: Validaciones de Inputs en general
-// TODO: Fondo cambiante según email
-
 const endpointUri =
   "https://formsws-hilstaging-com-0adj9wt8gzyq.runscope.net/solar";
 

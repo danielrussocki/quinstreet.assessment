@@ -8,6 +8,7 @@
   --color-app-gray-light: #d8d8d8;
   --color-app-green: #a0bc57;
   --color-app-blue: #6eb7c2;
+  --color-app-error: #d50303;
   /* fonts */
   --font-sans: "Montserrat", sans-serif;
   /* shadows */
@@ -23,13 +24,13 @@
   /* content */
   --content-empty: "";
   /* animations */
-  ---animate-background: app-background-color 5s ease-in-out alternate infinite;
+  --animate-background: app-background-color 5s ease-in-out alternate infinite;
   /* keyframes */
   @keyframes app-background-color {
-    from {
+    0% {
       background-color: #ecf8fb;
     }
-    to {
+    100% {
       background-color: #efefef;
     }
   }
